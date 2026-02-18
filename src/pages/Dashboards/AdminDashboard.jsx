@@ -41,9 +41,9 @@ const AdminDashboard = () => {
 
   const handleShip = async (productId) => {
     try {
-      await shipBox(productId);
-      setStatus(`Product ${productId} marked as shipped.`);
-      fetchBoxProducts(); // Refresh the product list
+      await shipBox(boxId);
+      setStatus(`Box ${boxId} marked as shipped.`);
+      fetchBoxProducts();
     } catch (e) {
       setStatus("Ship failed: " + e.message);
     }

@@ -50,7 +50,7 @@ export const registerBatch = async (batch) => {
 
   // 1️⃣ Ask backend to prepare batch (generate secrets + store in DB)
   const token = localStorage.getItem("token");
-  const res = await fetch("http://localhost:5000/prepare-batch", {
+  const res = await fetch("https://fake-product-backend-oqvl.onrender.com/prepare-batch", {
     method: "POST",
     headers: { "Content-Type": "application/json",
       "Authorization": `Bearer ${token}`

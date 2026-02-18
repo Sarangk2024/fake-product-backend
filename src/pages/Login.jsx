@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "../index.css";
 
-const API = "http://localhost:5000/api/auth";
+const API = "https://fake-product-backend-oqvl.onrender.com/api/auth";
 
 const Login = () => {
   const { role } = useParams();

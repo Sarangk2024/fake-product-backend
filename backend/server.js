@@ -169,7 +169,7 @@ app.post("/prepare-batch", authenticate, async (req, res) => {
         warrantyPeriod: batch.warrantyPeriod,
         batchNumber: batch.batchId,
         color: batch.color,
-        specs: JSON.stringify({ batch: batch.batchId }),
+        specs: JSON.stringify({ batch: batch.batchId, sealSeed: productSecret }),
         price: batch.price,
         image: batch.image
       });
