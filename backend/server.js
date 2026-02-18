@@ -30,7 +30,7 @@ const abi = JSON.parse(fs.readFileSync(abiPath, "utf-8"));
 /* ================= APP SETUP ================= */
 
 const app = express();
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors({ origin: process.env.FRONTEND_URL || "http://localhost:5173" }));
 app.use(express.json());
 
 
@@ -246,6 +246,7 @@ app.post("/verify", async (req, res) => {
 
 /* ================= START SERVER ================= */
 
-app.listen(5000, () => {
-  console.log("✅ Backend running on http://localhost:5000");
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`✅ Backend running on port ${PORT}`);
 });
